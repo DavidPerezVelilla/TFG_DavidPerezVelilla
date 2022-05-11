@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AddTeamComponent } from './components/add-team/add-team.component';
 import { EditTeamComponent } from './components/edit-team/edit-team.component';
 import { TeamListComponent } from './components/team-list/team-list.component';
+import { TeamService } from './shared/team.service';
 
 /* Firebase */
 import { AngularFireModule } from '@angular/fire/compat';
@@ -30,7 +31,7 @@ import { environment } from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
   ],
-  providers: [],
+  providers: [TeamService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

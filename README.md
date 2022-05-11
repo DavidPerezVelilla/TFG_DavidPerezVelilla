@@ -1,4 +1,13 @@
 # TFGDavidPerezGestorBB
+App dedicada a este divertido juego de mesa. En ella podras consultar su reglamento, tiendas donde poder comprarte un equipo e incluso jugar. Tambien cuenta con un apartado donde podras crear tu propio equipo, consultarlo (junto con muchos otros) y ver los jugadores que lo componen.
+
+Para crear este gestor, he creado 3 modelos:
+
+Equipo: nombre, raza (clave ajena en refenrecia a Razas), descripcion, imagen e icono.
+
+Razas: nombre
+
+Jugadores: nombre, equipo (clave ajena en refenrecia a Equipo), coste, movimiento, fuerza, agilidad, pase, armadura y habilidades.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
 

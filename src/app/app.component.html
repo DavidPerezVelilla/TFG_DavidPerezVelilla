@@ -7,7 +7,7 @@
 </mat-toolbar>
 <mat-sidenav-container>
   <!-- Sidenav -->
-  <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
+  <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened"
     [fixedTopGap]>
     <mat-nav-list>
       <a mat-list-item routerLinkActive="active" routerLink="/team-list">
@@ -15,6 +15,12 @@
       </a>
       <a mat-list-item routerLinkActive="active" routerLink="/add-team">
         <mat-icon>add</mat-icon> Añadir Equipo
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/add-race">
+        <mat-icon>add</mat-icon> Añadir Raza
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="store">
+        <mat-icon>shop_two</mat-icon> Tiendas
       </a>
     </mat-nav-list>
   </mat-sidenav>

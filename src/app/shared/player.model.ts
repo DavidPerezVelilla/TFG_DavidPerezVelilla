@@ -1,6 +1,6 @@
-import { Team } from "./team";
+import { Team } from "./team.model";
 
-export interface Player {
+export class Player {
   player_name: string;
   team: Team;
   cost: number;

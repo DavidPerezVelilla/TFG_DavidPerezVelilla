@@ -1,8 +1,8 @@
-import { Player } from "./player";
-import { Race } from "./race";
+import { Player } from "./player.model";
+import { Race } from "./race.model";
 
-export interface Team {
-  $key: string;
+
+export class Team {
   team_name: string;
   description: string;
   img: string;

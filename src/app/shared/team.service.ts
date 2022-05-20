@@ -13,7 +13,7 @@ export class TeamService {
 
   addTeam(team:Team){
     return new Promise<any>((resolve,reject)=>{
-      this.db.collection('team-collection')
+      this.db.collection('team')
       .add(team).then(
         (response)=>{
           console.log(response)
@@ -24,32 +24,37 @@ export class TeamService {
   }
 
   getTeam(id:string){
-    return this.db.collection('team-collection')
+    return this.db.collection('team')
     .doc(id)
     .valueChanges();
   }
 
   getTeamList(){
    return this.db
-   .collection('team-collection')
+   .collection('team')
    .snapshotChanges()
   }
 
+  getSubRaceList(){
+    return this.db.collection('sub_race')
+    .snapshotChanges()
+  }
+
   updateTeam(id, team:Team){
-    return this.db.collection('team-collection').doc(id)
+    return this.db.collection('team').doc(id)
     .update({
       team_name: team.team_name,
       description: team.description,
       img: team.img,
       icon: team.icon,
       race: team.race,
-      players: team.players
+
     })
 
   }
 
   deleteTeam(team){
-    return this.db.collection('team-collection')
+    return this.db.collection('team')
     .doc(team.id)
     .delete
   }

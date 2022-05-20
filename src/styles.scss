@@ -1,4 +1,12 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";html,body{height:100%;}
+.home {
+  text-decoration: none;
+  color: white;
+}
+.icon{
+  height: 50px;
+  width: 50px;
+}
 body{margin:0;font-family:'Roboto', sans-serif;}
 .header{justify-content:space-between;}
 .user-profile{margin-left:15px;}

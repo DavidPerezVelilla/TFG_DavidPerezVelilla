@@ -1,0 +1,17 @@
+<div class="background">
+  <div class="login-container">
+    <div class="form-container">
+      <h1>Registrate en PlayBloodBowl</h1>
+      <h5>Registrate con tu email</h5>
+      <app-login-form (formData)="register($event)"></app-login-form>
+    </div>
+    <div class="text-container">
+      <h1>Hey Buddy</h1>
+      <p>
+        ¿Ya tienes cuenta? ¡Haz click en el siguiente boton para
+        iniciar sesion!
+      </p>
+      <button mat-button routerLink="/login">Sign in</button>
+    </div>
+  </div>
+</div>

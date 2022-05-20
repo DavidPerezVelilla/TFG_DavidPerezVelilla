@@ -1,1 +1,18 @@
-<p>team-list works!</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">description</th>
+      <th scope="col">icon</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let team of Teams; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ team.team_name }}</td>
+      <td>{{ team.description }}</td>
+      <td *ngIf="team.icon"><img class="icon" src="{{ team.icon }}" alt=""></td>
+    </tr>
+  </tbody>
+</table>

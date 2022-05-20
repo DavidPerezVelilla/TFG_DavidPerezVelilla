@@ -10,13 +10,22 @@ import { AddTeamComponent } from './components/add-team/add-team.component';
 import { EditTeamComponent } from './components/edit-team/edit-team.component';
 import { TeamListComponent } from './components/team-list/team-list.component';
 import { TeamService } from './shared/team.service';
+import { AuthService } from './shared/auth.service';
 
 /* Firebase */
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+
 import { environment } from '../environments/environment';
 import { StoreComponent } from './components/store/store.component';
-import { AddRaceComponent } from './components/add-race/add-race.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { RegisterPageComponent } from './components/register-page/register-page.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
 
 
 @NgModule({
@@ -26,19 +35,25 @@ import { AddRaceComponent } from './components/add-race/add-race.component';
     EditTeamComponent,
     TeamListComponent,
     StoreComponent,
-    AddRaceComponent,
+    DashboardComponent,
+    LoginPageComponent,
+    LoginFormComponent,
+    RegisterPageComponent,
   ],
   imports: [
     BrowserModule,
     AngularMaterialModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    provideFirestore(() => getFirestore()),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    AngularFirestoreModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    provideAuth(() => getAuth())
   ],
-  providers: [TeamService],
+  providers: [TeamService, AuthService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

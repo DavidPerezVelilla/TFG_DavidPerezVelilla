@@ -1,14 +1,27 @@
-import { Component, HostListener, ViewChild} from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
+import { AuthService } from './shared/auth.service';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent  {
+export class AppComponent implements OnInit {
   title = 'TFG-DavidPerez-GestorBB';
   opened = true;
+
+  constructor(private authService: AuthService, private router: Router){}
+
+  ngOnInit(): void {}
+
+  logout(){
+    this.authService.logout().then(()=> this.router.navigate(['/login']))
+    .catch((e)=> console.log(e.message));
+  }
+
   @ViewChild('sidenav') sidenav: MatSidenav;
   OnInit(): void {
     if (window.innerWidth < 768) {

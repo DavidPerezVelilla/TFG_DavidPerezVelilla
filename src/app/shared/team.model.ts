@@ -1,4 +1,4 @@
-import { Player } from "./player.model";
+
 import { Race } from "./race.model";
 
 
@@ -8,5 +8,5 @@ export class Team {
   img: string;
   icon: string;
   race: Race
-  players: Array<Player>;
+
 }

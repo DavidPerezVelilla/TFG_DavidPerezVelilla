@@ -2,6 +2,8 @@
 <mat-toolbar color="primary" class="header">
   <div>Gestor Blood Bowl</div>
   <span class="nav-tool-items">
+    <mat-icon><a class="home" routerLinkActive="active" routerLink="/dashboard">home</a></mat-icon>
+    <mat-icon><a class="home" routerLinkActive="active" routerLink="/login">account_circle</a></mat-icon>
     <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
   </span>
 </mat-toolbar>
@@ -16,11 +18,11 @@
       <a mat-list-item routerLinkActive="active" routerLink="/add-team">
         <mat-icon>add</mat-icon> Añadir Equipo
       </a>
-      <a mat-list-item routerLinkActive="active" routerLink="/add-race">
-        <mat-icon>add</mat-icon> Añadir Raza
-      </a>
       <a mat-list-item routerLinkActive="active" routerLink="store">
         <mat-icon>shop_two</mat-icon> Tiendas
+      </a>
+      <a (click)="logout()" mat-list-item>
+        <mat-icon>cancel</mat-icon>Log out
       </a>
     </mat-nav-list>
   </mat-sidenav>

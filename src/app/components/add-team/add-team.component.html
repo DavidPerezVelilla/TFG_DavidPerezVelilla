@@ -1,25 +1,31 @@
-
+<div class="background">
   <form [formGroup]="teamForm" (ngSubmit)="onSubmit()" novalidate>
     <div>
       <mat-form-field appearance="fill">
         <mat-label>Nombre del equipo</mat-label>
-        <input matInput type="text" formControlName="name" class="form-control" required>
+        <input matInput type="text" formControlName="team_name" class="form-control" required>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Descripcion</mat-label>
+        <input matInput type="text" formControlName="description" class="form-control" required>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field appearance="fill">
         <mat-label>Icono (url)</mat-label>
-        <input matInput type="text" formControlName="name" class="form-control" required>
+        <input matInput type="text" formControlName="icon" class="form-control" >
       </mat-form-field>
     </div>
     <div>
       <mat-form-field appearance="fill">
         <mat-label>Imagen (url)</mat-label>
-        <input matInput type="text" formControlName="name" class="form-control" required>
+        <input matInput type="text" formControlName="img" class="form-control" >
       </mat-form-field>
     </div>
     <div class="mb-3">
       <button mat-raised-button type="submit" class="btn btn-primary" [disabled]="!teamForm.valid">Crear</button>
     </div>
   </form>
-
+</div>

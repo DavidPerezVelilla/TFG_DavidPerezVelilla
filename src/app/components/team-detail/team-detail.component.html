@@ -1,37 +1,39 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="{{teams.img}}" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
+<div class="background">
+  <div class="login-container">
+    <div class="text-container">
+      <img src="{{teams.img}}" *ngIf="teams.img" />
+      <h3>{{teams.team_name}}</h3>
+      <p>{{teams.description}}</p>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Jugador</th>
+          <th scope="col">Movimiento</th>
+          <th scope="col">Fuerza</th>
+          <th scope="col">Agilidad</th>
+          <th scope="col">Pase</th>
+          <th scope="col">Armadura</th>
+          <th scope="col">Habilidades</th>
+          <th scope="col">Coste</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of players; let i = index">
+          <ng-container *ngIf="players[i].team == id">
+          <td>{{ players[i].player_name }}</td>
+          <td>{{ players[i].mov }}</td>
+          <td>{{ players[i].str }}</td>
+          <td>{{ players[i].agl }}</td>
+          <td>{{ players[i].thr}}</td>
+          <td>{{ players[i].arm }}</td>
+          <td>{{ players[i].hab }}</td>
+          <td>{{ players[i].cost }}</td>
+        </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">habilidades</th>
-      <th scope="col">equipo</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let player of players; let i = index">
-      <ng-container *ngIf="players[i].team == id">
-      <td>{{ players[i].player_name }}</td>
-      <td>{{ players[i].hab }}</td>
-    </ng-container>
-    </tr>
-  </tbody>
-</table>
+

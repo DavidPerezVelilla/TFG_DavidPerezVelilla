@@ -15,6 +15,7 @@ export class TeamDetailComponent implements OnInit {
   players: Player[];
   errorMessage = '';
   id =''
+  displayedColumns: string[] = ['name', 'mov', 'str', 'agl', 'thr', 'arm', 'hab', 'cost'];
 
 
 

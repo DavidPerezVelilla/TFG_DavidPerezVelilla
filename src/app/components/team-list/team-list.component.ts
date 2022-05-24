@@ -10,11 +10,12 @@ import { TeamService } from 'src/app/shared/team.service';
 export class TeamListComponent implements OnInit {
 
   Teams: Team[];
+  displayedColumns: string[] = ['name', 'description', 'icon'];
 
   constructor(private teamService:TeamService) { }
 
   ngOnInit(): void {
-    this.teamService.getTeamList().subscribe((res)=>{
+  this.teamService.getTeamList().subscribe((res)=>{
       this.Teams = res.map((e)=>{
         return{
           id: e.payload.doc.id,...(e.payload.doc.data() as Team),

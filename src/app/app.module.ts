@@ -25,6 +25,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { TeamDetailComponent } from './components/team-detail/team-detail.component';
 
 
 
@@ -39,6 +40,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     LoginPageComponent,
     LoginFormComponent,
     RegisterPageComponent,
+    TeamDetailComponent,
   ],
   imports: [
     BrowserModule,

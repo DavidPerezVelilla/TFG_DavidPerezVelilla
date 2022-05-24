@@ -35,6 +35,11 @@ export class TeamService {
    .snapshotChanges()
   }
 
+  getPlayers(){
+    return this.db.collection('player')
+    .snapshotChanges()
+  }
+
   getSubRaceList(){
     return this.db.collection('sub_race')
     .snapshotChanges()

@@ -12,7 +12,7 @@
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ team.team_name }}</td>
       <td>{{ team.description }}</td>
-      <td *ngIf="team.icon"><img class="icon" src="{{ team.icon }}" alt=""></td>
+      <td *ngIf="team.icon"><a [routerLink]="['/team-list', team.id]"><img class="icon" src="{{ team.icon }}" alt=""></a></td>
     </tr>
   </tbody>
 </table>

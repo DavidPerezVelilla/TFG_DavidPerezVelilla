@@ -10,6 +10,6 @@ export class Player {
   thr: number;
   arm: number;
   hab: Array<string>
-  team: Team;
+  team: string;
 
 }

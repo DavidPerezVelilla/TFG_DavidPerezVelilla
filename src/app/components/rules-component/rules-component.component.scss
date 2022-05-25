@@ -1,0 +1,58 @@
+.background {
+
+  display: inline-block;
+  vertical-align: top;
+  display: flex;
+  height: auto;
+  justify-content: center;
+
+}
+
+.login-container {
+  border-radius: 10px;
+  box-shadow: 0 0 20px 2px #e4e4e4;
+  display: flex;
+  width: 90%;
+}
+
+.text-container {
+  align-items: center;
+  background-color: #384bb4;
+  border-radius: 10px 0 0 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  width: 30%;
+  h1 {
+    color: #fff;
+    text-align: justify;
+  }
+}
+
+p {
+  margin-bottom: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: center;
+}
+
+.p{
+
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: justify;
+
+}
+
+h2{
+  margin-bottom: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: justify;
+}
+
+
+

@@ -14,6 +14,7 @@ import {
   redirectLoggedInTo,
   redirectUnauthorizedTo,
 } from '@angular/fire/auth-guard';
+import { RulesComponentComponent } from './components/rules-component/rules-component.component';
 
 
 const redirectUnauthorizedToLogin = () =>redirectUnauthorizedTo(['login']);
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'edit-team/:id', component: EditTeamComponent },
   { path: 'team-list', component: TeamListComponent},
   { path: 'team-list/:id', component: TeamDetailComponent},
+  { path: 'rules', component: RulesComponentComponent},
   { path: 'store', component: StoreComponent},
   { path: 'dashboard', component: DashboardComponent, ...canActivate(redirectUnauthorizedToLogin)},
   { path: 'login', component:LoginPageComponent, ...canActivate(redirectLoggedInToHome),},

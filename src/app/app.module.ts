@@ -26,6 +26,7 @@ import { RegisterPageComponent } from './components/register-page/register-page.
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { TeamDetailComponent } from './components/team-detail/team-detail.component';
+import { RulesComponentComponent } from './components/rules-component/rules-component.component';
 
 
 
@@ -41,6 +42,7 @@ import { TeamDetailComponent } from './components/team-detail/team-detail.compon
     LoginFormComponent,
     RegisterPageComponent,
     TeamDetailComponent,
+    RulesComponentComponent,
   ],
   imports: [
     BrowserModule,

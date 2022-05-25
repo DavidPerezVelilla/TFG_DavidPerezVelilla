@@ -1,6 +1,6 @@
 <!-- Toolbar -->
 <mat-toolbar color="primary" class="header">
-  <div>Gestor Blood Bowl</div>
+  <div>PlayBloodBowl</div>
   <span class="nav-tool-items">
     <mat-icon><a class="home" routerLinkActive="active" routerLink="/dashboard">home</a></mat-icon>
     <mat-icon><a class="home" routerLinkActive="active" routerLink="/login">account_circle</a></mat-icon>
@@ -20,6 +20,9 @@
       </a>
       <a mat-list-item routerLinkActive="active" routerLink="store">
         <mat-icon>shop_two</mat-icon> Tiendas
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="rules">
+        <mat-icon>description</mat-icon> Reglamento
       </a>
       <a (click)="logout()" mat-list-item>
         <mat-icon>cancel</mat-icon>Log out

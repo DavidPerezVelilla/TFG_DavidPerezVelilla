@@ -1,1 +1,20 @@
-
+<table class="mat-elevation-z8 table">
+  <thead>
+    <tr>
+      <th scope="col">Escudo</th>
+      <th scope="col">Equipo</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let team of Teams; let i = index">
+      <ng-container *ngIf="team.user == user">
+      <a [routerLink]="['/team-list', team.id]"><td *ngIf="team.icon"><img class="icon" src="{{ team.icon }}" title="{{team.team_name}}"></td></a>
+      <td>{{ team.team_name }}</td>
+      <td>{{ team.description }}</td>
+      <td><button mat-raised-button color="primary">Editar equipo</button></td>
+    </ng-container>
+    </tr>
+  </tbody>
+</table>

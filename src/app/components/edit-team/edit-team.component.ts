@@ -10,6 +10,7 @@ import { TeamService } from 'src/app/shared/team.service';
 export class EditTeamComponent implements OnInit {
 
   Teams: Team[];
+  user:string;
   constructor(private teamService: TeamService) { }
 
   ngOnInit(): void {
@@ -20,6 +21,7 @@ export class EditTeamComponent implements OnInit {
         }
       })
     })
+    this.user=this.teamService.getUser();
   }
 
   removeTeam = (team)=> this.teamService.deleteTeam(team)

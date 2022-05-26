@@ -3,7 +3,7 @@ import { Team } from "./team.model";
 
 export class Player {
   player_name: string;
-  cost: number;
+  cost: string;
   mov: number;
   str: number;
   agl: number;

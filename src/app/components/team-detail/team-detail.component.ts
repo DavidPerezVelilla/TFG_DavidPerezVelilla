@@ -15,9 +15,6 @@ export class TeamDetailComponent implements OnInit {
   players: Player[];
   errorMessage = '';
   id =''
-  displayedColumns: string[] = ['name', 'mov', 'str', 'agl', 'thr', 'arm', 'hab', 'cost'];
-
-
 
   constructor(private teamService: TeamService, private route: ActivatedRoute) { }
 
@@ -44,4 +41,5 @@ export class TeamDetailComponent implements OnInit {
       error: err => this.errorMessage = err
     });
   }
+
 }

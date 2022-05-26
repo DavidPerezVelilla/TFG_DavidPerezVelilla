@@ -26,7 +26,8 @@ export class AddTeamComponent implements OnInit {
       description: [''],
       icon: [''],
       img: [''],
-      race:['']
+      race:[''],
+      user: [teamService.getUser()]
     })
   }
 

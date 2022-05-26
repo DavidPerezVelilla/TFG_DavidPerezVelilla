@@ -23,7 +23,7 @@ const redirectLoggedInToHome = () => redirectLoggedInTo(['dashboard']);
 
 const routes: Routes = [
   { path: 'add-team', component: AddTeamComponent, ...canActivate(redirectUnauthorizedToLogin) },
-  { path: 'edit-team/:id', component: EditTeamComponent },
+  { path: 'edit-team', component: EditTeamComponent, ...canActivate(redirectUnauthorizedToLogin) },
   { path: 'team-list', component: TeamListComponent},
   { path: 'team-list/:id', component: TeamDetailComponent},
   { path: 'rules', component: RulesComponentComponent},

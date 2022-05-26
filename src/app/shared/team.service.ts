@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Team } from './team.model';
 import{ AngularFirestore } from '@angular/fire/compat/firestore'
-
+import { AuthService } from './auth.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import{ AngularFirestore } from '@angular/fire/compat/firestore'
 export class TeamService {
 
 
-  constructor(private db:AngularFirestore) { }
+  constructor(private db:AngularFirestore, private authService: AuthService) { }
 
   addTeam(team:Team){
     return new Promise<any>((resolve,reject)=>{
@@ -64,4 +65,8 @@ export class TeamService {
     .delete
   }
 
+
+  getUser(): string {
+    return this.authService.getAuth().currentUser.uid;
+  }
 }

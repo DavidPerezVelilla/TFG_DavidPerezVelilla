@@ -1,22 +1,22 @@
-<!-- Toolbar -->
 <mat-toolbar color="primary" class="header">
   <div>PlayBloodBowl</div>
   <span class="nav-tool-items">
     <mat-icon><a class="home" routerLinkActive="active" routerLink="/dashboard">home</a></mat-icon>
-    <mat-icon><a class="home" routerLinkActive="active" routerLink="/login">account_circle</a></mat-icon>
     <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
   </span>
 </mat-toolbar>
 <mat-sidenav-container>
-  <!-- Sidenav -->
   <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened"
     [fixedTopGap]>
     <mat-nav-list>
       <a mat-list-item routerLinkActive="active" routerLink="/team-list">
         <mat-icon>format_list_bulleted</mat-icon> Equipos
       </a>
-      <a mat-list-item routerLinkActive="active" routerLink="/add-team">
+      <a mat-list-item routerLinkActive="active" routerLink="/add-team" *ngIf="userLoged() == true">
         <mat-icon>add</mat-icon> Añadir Equipo
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/edit-team"  *ngIf="userLoged() == true">
+        <mat-icon>library_books</mat-icon> Tus Equipos
       </a>
       <a mat-list-item routerLinkActive="active" routerLink="store">
         <mat-icon>shop_two</mat-icon> Tiendas
@@ -24,7 +24,7 @@
       <a mat-list-item routerLinkActive="active" routerLink="rules">
         <mat-icon>description</mat-icon> Reglamento
       </a>
-      <a (click)="logout()" mat-list-item>
+      <a (click)="logout()" mat-list-item  *ngIf="userLoged() == true">
         <mat-icon>cancel</mat-icon>Log out
       </a>
     </mat-nav-list>

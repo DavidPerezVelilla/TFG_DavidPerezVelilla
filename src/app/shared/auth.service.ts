@@ -42,6 +42,10 @@ export class AuthService {
     }
   }
 
+  getAuth() {
+    return this.auth;
+  }
+
   logout() {
     return signOut(this.auth);
   }

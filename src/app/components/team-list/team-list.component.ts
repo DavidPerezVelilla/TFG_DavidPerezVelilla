@@ -10,9 +10,11 @@ import { TeamService } from 'src/app/shared/team.service';
 export class TeamListComponent implements OnInit {
 
   Teams: Team[];
-  displayedColumns: string[] = ['name', 'description', 'icon'];
+  displayedColumns: string[] = [ 'icon', 'name', 'description'];
 
   constructor(private teamService:TeamService) { }
+
+
 
   ngOnInit(): void {
   this.teamService.getTeamList().subscribe((res)=>{
@@ -22,6 +24,7 @@ export class TeamListComponent implements OnInit {
         }
       })
     })
+
   }
 
   removeTeam = (team)=> this.teamService.deleteTeam(team)

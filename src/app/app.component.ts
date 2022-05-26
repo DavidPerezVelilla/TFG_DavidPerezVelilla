@@ -12,6 +12,7 @@ import { AuthService } from './shared/auth.service';
 export class AppComponent implements OnInit {
   title = 'TFG-DavidPerez-GestorBB';
   opened = true;
+  user = false;
 
   constructor(private authService: AuthService, private router: Router){}
 
@@ -49,5 +50,14 @@ export class AppComponent implements OnInit {
     } else {
       return false;
     }
+  }
+
+  userLoged(){
+    if (this.authService.getAuth().currentUser){
+      return this.user = true
+    }else{
+      return this.user = false;
+    }
+
   }
 }

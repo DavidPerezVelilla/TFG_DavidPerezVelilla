@@ -44,6 +44,6 @@ export class AddTeamComponent implements OnInit {
   onSubmit() {
     this.teamService.addTeam(this.teamForm.value);
     alert('Equipo creado con exito!');
-    this.router.navigate(['edit-team']);
+    this.router.navigate(['/dashboard']);
    };
 }

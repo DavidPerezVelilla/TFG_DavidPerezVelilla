@@ -10,21 +10,33 @@ import { TeamService } from 'src/app/shared/team.service';
 export class EditTeamComponent implements OnInit {
 
   Teams: Team[];
+  teamsByUser: Team[] = []
   user:string;
   constructor(private teamService: TeamService) { }
 
   ngOnInit(): void {
+    this.user=this.teamService.getUser();
     this.teamService.getTeamList().subscribe((res)=>{
       this.Teams = res.map((e)=>{
         return{
           id: e.payload.doc.id,...(e.payload.doc.data() as Team),
         }
       })
+      this.filterUser();
     })
-    this.user=this.teamService.getUser();
+
   }
 
-  removeTeam = (team)=> this.teamService.deleteTeam(team)
+  filterUser(){
+    for(let i of this.Teams){
+      if(i.user == this.user){
+        this.teamsByUser.push(i);
+      }
+    }
+  }
+  removeTeam(team){
+    this.teamService.deleteTeam(team)
+  }
 
 
 }

@@ -7,12 +7,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let team of Teams; let i = index">
-      <ng-container *ngIf="team.user == ''">
+    <tr *ngFor="let team of teamsFiltered; let i = index">
       <a [routerLink]="['/team-list', team.id]"><td><img class="icon" src="{{ team.icon }}" title="{{team.team_name}}"></td></a>
       <td>{{ team.team_name }}</td>
       <td>{{ team.description }}</td>
-    </ng-container>
     </tr>
   </tbody>
 </table>

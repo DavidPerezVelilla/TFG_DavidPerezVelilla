@@ -13,6 +13,7 @@ export class TeamDetailComponent implements OnInit {
 
   teams: Team = new Team;
   players: Player[];
+  playersFiltered: Player[] = [];
   errorMessage = '';
   id =''
 
@@ -32,7 +33,16 @@ export class TeamDetailComponent implements OnInit {
           id: e.payload.doc.id,...(e.payload.doc.data() as Player),
         }
       })
+      this.filterPlayers();
     })
+  }
+
+  filterPlayers() {
+    for (let i of this.players){
+      if (i.team == this.id){
+        this.playersFiltered.push(i)
+      }
+    }
   }
 
   private getTeam(id:string){

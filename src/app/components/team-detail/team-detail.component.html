@@ -20,17 +20,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let player of players; let i = index">
-          <ng-container *ngIf="players[i].team == id">
-          <td>{{ players[i].player_name }}</td>
-          <td>{{ players[i].mov }}</td>
-          <td>{{ players[i].str }}</td>
-          <td>{{ players[i].agl }}</td>
-          <td>{{ players[i].thr}}</td>
-          <td>{{ players[i].arm }}</td>
-          <td>{{ players[i].hab }}</td>
-          <td>{{ players[i].cost }}</td>
-        </ng-container>
+        <tr *ngFor="let player of playersFiltered;">
+          <td>{{ player.player_name }}</td>
+          <td>{{ player.mov }}</td>
+          <td>{{ player.str }}</td>
+          <td>{{ player.agl }}</td>
+          <td>{{ player.thr}}</td>
+          <td>{{ player.arm }}</td>
+          <td>{{ player.hab }}</td>
+          <td>{{ player.cost }}</td>
         </tr>
       </tbody>
     </table>

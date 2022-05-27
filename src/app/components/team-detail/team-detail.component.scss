@@ -1,5 +1,5 @@
 img{
-  width: 100%;
+  width: 90%;
 }
 p {
   margin-bottom: 20px;
@@ -16,6 +16,9 @@ table{
   margin-left: 20px;
   margin-top: 20px;
   width: calc(100% - 40px);
+  border-spacing: 15px;
+  border-collapse: separate;
+
 }
 
 tbody{

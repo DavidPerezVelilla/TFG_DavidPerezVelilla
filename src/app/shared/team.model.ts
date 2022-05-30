@@ -7,6 +7,6 @@ export class Team {
   description: string;
   img: string;
   icon: string;
-  race: Race;
+  race: string;
   user: string;
 }

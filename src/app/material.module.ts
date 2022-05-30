@@ -17,7 +17,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatCardModule } from '@angular/material/card'
+import { MatCardModule } from '@angular/material/card';
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 @NgModule({
    imports: [
@@ -39,7 +40,8 @@ import { MatCardModule } from '@angular/material/card'
       MatTooltipModule,
       MatTableModule,
       MatPaginatorModule,
-      MatCardModule
+      MatCardModule,
+      MatSnackBarModule
    ],
    exports: [
       MatButtonModule,

@@ -9,7 +9,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let team of  teamsByUser">
-      <a [routerLink]="['/team-list', team.id]">
+      <a [routerLink]="['/edit-team', team.id]">
         <td *ngIf="team.icon">
           <img class="icon" src="{{ team.icon }}" title="{{team.team_name}}">
         </td>
@@ -17,10 +17,9 @@
       <td>{{ team.team_name }}</td>
       <td>{{ team.description }}</td>
       <td>
-        <a [routerLink]="['/team-list', team.id]">
+        <a [routerLink]="['/edit-team', team.id]">
           <button mat-raised-button color="primary">Editar equipo</button>
         </a>
-        <button mat-raised-button color="primary">Borrar equipo</button>
       </td>
 
     </tr>

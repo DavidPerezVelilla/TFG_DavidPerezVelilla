@@ -1,0 +1,56 @@
+<div class="background">
+  <div class="login-container">
+    <div class="text-container">
+      <img src="{{teams.img}}" *ngIf="teams.img" />
+      <h3>{{teams.team_name}}</h3>
+      <p>{{teams.description}}</p>
+    </div>
+    <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Posición</th>
+          <th scope="col">Movimiento</th>
+          <th scope="col">Fuerza</th>
+          <th scope="col">Agilidad</th>
+          <th scope="col">Pase</th>
+          <th scope="col">Armadura</th>
+          <th scope="col">Habilidades</th>
+          <th scope="col">Coste</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of playersFiltered;">
+          <td>{{ player.player_name }}</td>
+          <td>{{ player.mov }}</td>
+          <td>{{ player.str }}</td>
+          <td>{{ player.agl }}</td>
+          <td>{{ player.thr}}</td>
+          <td>{{ player.arm }}</td>
+          <td>{{ player.hab }}</td>
+          <td>{{ player.cost }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <form [formGroup]="playerForm" (ngSubmit)="onSubmit()">
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Jugadores</mat-label>
+          <mat-select formControlName="player_name"
+          class="form-control" required>
+            <ng-container *ngFor="let player of playersByRace ">
+              <mat-option value="{{player.player_name}}">{{player.player_name}}</mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="mb-3">
+        <button mat-raised-button type="submit" class="btn btn-primary">Añadir Jugador</button>
+      </div>
+    </form>
+  </div>
+  </div>
+</div>
+
+
+

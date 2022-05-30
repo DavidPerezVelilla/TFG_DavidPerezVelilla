@@ -27,6 +27,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { TeamDetailComponent } from './components/team-detail/team-detail.component';
 import { RulesComponentComponent } from './components/rules-component/rules-component.component';
+import { EditDetailComponent } from './components/edit-detail/edit-detail.component';
 
 
 
@@ -43,6 +44,7 @@ import { RulesComponentComponent } from './components/rules-component/rules-comp
     RegisterPageComponent,
     TeamDetailComponent,
     RulesComponentComponent,
+    EditDetailComponent,
   ],
   imports: [
     BrowserModule,

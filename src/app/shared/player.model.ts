@@ -1,6 +1,3 @@
-import { Team } from "./team.model";
-
-
 export class Player {
   player_name: string;
   cost: string;
@@ -11,5 +8,5 @@ export class Player {
   arm: number;
   hab: Array<string>
   team: string;
-
+  race: string;
 }

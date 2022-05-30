@@ -3,6 +3,7 @@ import { Team } from './team.model';
 import{ AngularFirestore } from '@angular/fire/compat/firestore'
 import { AuthService } from './auth.service';
 import { Observable } from 'rxjs';
+import { Player } from './player.model';
 
 @Injectable({
   providedIn: 'root'
@@ -41,8 +42,8 @@ export class TeamService {
     .snapshotChanges()
   }
 
-  getSubRaceList(){
-    return this.db.collection('sub_race')
+  getRaceList(){
+    return this.db.collection('race')
     .snapshotChanges()
   }
 
@@ -65,6 +66,23 @@ export class TeamService {
     .delete
   }
 
+  addPlayer(player:Player){
+    return new Promise<any>((resolve,reject)=>{
+      this.db.collection('player')
+      .add(player).then(
+        (response)=>{
+          console.log(response)
+        },
+        (error)=> reject(error)
+      );
+    });
+  }
+
+  getPlayerById(id:string){
+    return this.db.collection('player')
+    .doc(id)
+    .valueChanges();
+  }
 
   getUser(): string {
     return this.authService.getAuth().currentUser.uid;

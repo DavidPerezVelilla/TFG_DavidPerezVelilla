@@ -22,8 +22,7 @@ export class EditDetailComponent implements OnInit {
   id =''
   playerId = '';
   playerForm: FormGroup;
-  player: Player = new Player;
-  newPlayer: Player = new Player;
+
 
   constructor(private teamService: TeamService,
     private route: ActivatedRoute,
@@ -89,5 +88,9 @@ export class EditDetailComponent implements OnInit {
     this.teamService.addPlayer(this.playerForm.value);
     this._snackBar.open("Jugador añadido correctamente", "Aceptar");
    };
+
+   removeTeam(team){
+    this.teamService.deleteTeam(team)
+  }
 
 }

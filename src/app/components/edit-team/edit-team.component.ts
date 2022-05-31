@@ -34,8 +34,9 @@ export class EditTeamComponent implements OnInit {
       }
     }
   }
+
   removeTeam(team){
-    this.teamService.deleteTeam(team)
+    this.teamService.deleteTeam(team);
   }
 
 

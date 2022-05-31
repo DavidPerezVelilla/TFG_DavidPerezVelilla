@@ -36,10 +36,9 @@
       <div>
         <mat-form-field appearance="fill">
           <mat-label>Jugadores</mat-label>
-          <mat-select formControlName="player_name"
-          class="form-control" required>
+          <mat-select [(value)]="player" class="form-control" required>
             <ng-container *ngFor="let player of playersByRace ">
-              <mat-option value="{{player.player_name}}">{{player.player_name}}</mat-option>
+              <mat-option [value]="player">{{player.player_name}}</mat-option>
             </ng-container>
           </mat-select>
         </mat-form-field>

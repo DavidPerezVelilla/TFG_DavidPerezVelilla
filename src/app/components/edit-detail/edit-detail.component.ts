@@ -20,7 +20,7 @@ export class EditDetailComponent implements OnInit {
   errorMessage = '';
   playersByRace:Player[] = [];
   id =''
-  playerId = '';
+  player: Player;
   playerForm: FormGroup;
 
 
@@ -31,10 +31,6 @@ export class EditDetailComponent implements OnInit {
     private _snackBar: MatSnackBar) {
 
       this.playerForm = this.formBuilder.group({
-
-        player_name:[''],
-        str: [''],
-
 
       })
 
@@ -70,7 +66,7 @@ export class EditDetailComponent implements OnInit {
 
   racePlayers(){
     for (let i of this.players){
-      if(i.race == this.team_race){
+      if(i.race == this.team_race && i.team != this.id){
         this.playersByRace.push(i);
       }
     }
@@ -84,13 +80,10 @@ export class EditDetailComponent implements OnInit {
   }
 
   onSubmit() {
-
-    this.teamService.addPlayer(this.playerForm.value);
+    this.player.team = this.id;
+    this.teamService.addPlayer(this.player);
     this._snackBar.open("Jugador añadido correctamente", "Aceptar");
+    this.router.navigate([""]);
    };
-
-   removeTeam(team){
-    this.teamService.deleteTeam(team)
-  }
 
 }

@@ -62,8 +62,7 @@ export class TeamService {
 
   deleteTeam(team){
     return this.db.collection('team')
-    .doc(team.id)
-    .delete
+    .doc(team.id).delete();
   }
 
   addPlayer(player:Player){

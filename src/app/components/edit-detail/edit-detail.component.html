@@ -4,6 +4,9 @@
       <img src="{{teams.img}}" *ngIf="teams.img" />
       <h3>{{teams.team_name}}</h3>
       <p>{{teams.description}}</p>
+      <a [routerLink]="['/edit', id]">
+        <button mat-raised-button type="submit" class="btn btn-primary">Editar</button>
+      </a>
     </div>
     <div>
     <table class="table">

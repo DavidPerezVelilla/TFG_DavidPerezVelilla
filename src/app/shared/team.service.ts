@@ -54,8 +54,6 @@ export class TeamService {
       description: team.description,
       img: team.img,
       icon: team.icon,
-      race: team.race,
-
     })
 
   }

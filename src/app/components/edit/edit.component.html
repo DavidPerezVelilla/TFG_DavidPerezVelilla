@@ -1,0 +1,46 @@
+<div class="background">
+  <div class="login-container">
+    <div class="text-container">
+      <h1>Añadir</h1>
+      <p>
+       ¿Quieres crear tus equipos y poder gestionarlos?
+       ¡Rellena el siguiente formulario para ello!
+       Si quieres consultar tus equipos haz click en el boton.
+      </p>
+      <button mat-button routerLink="/edit-team">Tus equipos</button>
+    </div>
+    <div class="form-container">
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit()" novalidate>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Nombre del equipo</mat-label>
+            <input matInput type="text" formControlName="team_name" class="form-control">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Descripcion</mat-label>
+            <input matInput type="text" formControlName="description" class="form-control">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Icono (url)</mat-label>
+            <input matInput type="text" formControlName="icon" class="form-control" >
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Imagen (url)</mat-label>
+            <input matInput type="text" formControlName="img" class="form-control" >
+          </mat-form-field>
+        </div>
+        <div class="mb-3">
+          <button mat-raised-button type="submit" class="btn btn-primary">Actualizar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+

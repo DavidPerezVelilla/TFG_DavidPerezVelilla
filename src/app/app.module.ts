@@ -28,6 +28,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { TeamDetailComponent } from './components/team-detail/team-detail.component';
 import { RulesComponentComponent } from './components/rules-component/rules-component.component';
 import { EditDetailComponent } from './components/edit-detail/edit-detail.component';
+import { EditComponent } from './components/edit/edit.component';
 
 
 
@@ -45,6 +46,7 @@ import { EditDetailComponent } from './components/edit-detail/edit-detail.compon
     TeamDetailComponent,
     RulesComponentComponent,
     EditDetailComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,
